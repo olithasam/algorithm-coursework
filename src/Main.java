@@ -1,17 +1,24 @@
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        System.out.println("***********************************");
+        System.out.println("      Network Flow Algorithm       ");
+        System.out.println("***********************************");
+        System.out.println(" ");
+
         Scanner inputScanner = new Scanner(System.in);
         Scanner fileScanner = null;
         String filePath = "";
 
         while (true) {
-            System.out.print("Enter the benchmark file name: ");
+            System.out.print("Enter the benchmark file name (eg-: ladder_3): ");
             String fileName = inputScanner.nextLine();
-            filePath = "./benchmarks/" + fileName;
+            filePath = "./benchmarks/" + fileName + ".txt";
 
             try {
                 fileScanner = new Scanner(new File(filePath));
@@ -32,6 +39,7 @@ public class Main {
         }
 
         int maxFlow = MaxFlowAlgorithm.fordFulkerson(g, 0, n - 1);
+        System.out.println(" ");
         System.out.println("Maximum Flow: " + maxFlow);
 
         inputScanner.close();
