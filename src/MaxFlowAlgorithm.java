@@ -39,10 +39,18 @@ public class MaxFlowAlgorithm {
             maxFlow += pathFlow;
         }
 
-        // Print only augmenting paths and flows
+        // Print augmenting paths and flows
         System.out.println("\nFinal Augmenting Paths and Flow Calculations:");
         for (int i = 0; i < augmentingPaths.size(); i++) {
-            System.out.println("Path " + (i + 1) + ": " + augmentingPaths.get(i) + " with flow = " + pathFlows.get(i));
+            List<Integer> path = augmentingPaths.get(i);
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < path.size(); j++) {
+                sb.append(path.get(j));
+                if (j != path.size() - 1) {
+                    sb.append(" -> ");
+                }
+            }
+            System.out.println("Path " + (i + 1) + ": " + sb + " with flow = " + pathFlows.get(i));
         }
 
         return maxFlow;

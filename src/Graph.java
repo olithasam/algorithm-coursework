@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+// Class to represent the flow network as an adjacency list
 public class Graph {
     int n;
     List<Edge>[] adj;
@@ -13,7 +14,7 @@ public class Graph {
             adj[i] = new ArrayList<>();
         }
     }
-
+    // Method to add an edge with a corresponding reverse edge
     public void addEdge(int from, int to, int capacity) {
         Edge e1 = new Edge(to, adj[to].size(), capacity);
         Edge e2 = new Edge(from, adj[from].size(), 0); // reverse edge

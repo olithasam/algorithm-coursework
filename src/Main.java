@@ -40,6 +40,8 @@ public class Main {
 
         int maxFlow = MaxFlowAlgorithm.fordFulkerson(g, 0, n - 1);
         System.out.println(" ");
+        System.out.println("Source Node: 0, Sink Node: " + (n - 1));
+
         System.out.println("Maximum Flow: " + maxFlow);
 
         inputScanner.close();
